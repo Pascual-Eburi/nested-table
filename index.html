@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabla</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      body {
+        margin: 0 auto;
+        width: 100%;
+        min-height: 100vh;
+      }
+      div {
+        max-width: 80%;
+        margin: 0 auto;
+      }
+      table {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      .main-table thead td,
+      .main-table thead th {
+        color: #99a1b7;
+        text-transform: uppercase;
+      }
+      table.main-table > tbody > tr.line td:last-child {
+        text-align: right;
+      }
+
+      td,
+      th {
+        text-align: left;
+        padding: 8px;
+        border-bottom-width: 1px;
+        border-bottom-style: dashed;
+        border-bottom-color: #f1f1f4;
+      }
+
+      tr:nth-child(even) {
+        background-color: #fff;
+      }
+
+      tr.open {
+        border-radius: 0.4rem;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+        background: #f1f1f4;
+      }
+      tr.open td {
+        padding: 0.5rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+      }
+      tr.closed + tr {
+        display: none;
+      }
+      tr.open + tr table {
+        margin-top: 0.5rem;
+      }
+      tr.open + tr .sub-table-conteiner {
+        max-height: 15rem;
+        overflow-y: auto;
+        min-width: 100%!important;
+        padding-bottom: .65rem;
+      }
+      .sub-table{
+        width: 100%;
+      }
+      tr.open + tr td{
+
+
+
+      }
+
+      span {
+        cursor: pointer;
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tabla</h1>
+    <div>
+      <table class="main-table">
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Contact</th>
+            <th>Country</th>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="line closed">
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+            <td>
+              <span class="button">
+                <i class="fa-solid fa-plus"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <div class="sub-table-conteiner">
+                <table class="sub-table">
+                  <thead>
+                    <tr>
+                      <th>Product</th>
+                      <th>Price</th>
+                      <th>Product</th>
+                      <th>Price</th>
+                      <th>Product</th>
+                      <th>Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                    </tr>
+                    <tr>
+                      <td>Oranges</td>
+                      <td>$2.00</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                    </tr>
+                    <tr>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                    </tr>
+                    <tr>
+                      <td>Oranges</td>
+                      <td>$2.00</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                    </tr>
+                    <tr>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                    </tr>
+                    <tr>
+                      <td>Oranges</td>
+                      <td>$2.00</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                    </tr>
+                    <tr>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                    </tr>
+                    <tr>
+                      <td>Oranges</td>
+                      <td>$2.00</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                    </tr>
+                    <tr>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                    </tr>
+                    <tr>
+                      <td>Oranges</td>
+                      <td>$2.00</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                    </tr>
+                    <tr>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                    </tr>
+                    <tr>
+                      <td>Oranges</td>
+                      <td>$2.00</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                      <td>Apples</td>
+                      <td>$1.50</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </td>
+          </tr>
+          <tr class="line closed">
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+            <td>
+              <span class="button">
+                <i class="fa-solid fa-plus"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <table>
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                </tr>
+                <tr>
+                  <td>Tacos</td>
+                  <td>$3.00</td>
+                  <td>Tacos</td>
+                  <td>$3.00</td>
+                  <td>Tacos</td>
+                  <td>$3.00</td>
+                  <td>Tacos</td>
+                  <td>$3.00</td>
+                </tr>
+                <tr>
+                  <td>Quesadillas</td>
+                  <td>$2.50</td>
+                  <td>Quesadillas</td>
+                  <td>$2.50</td>
+                  <td>Quesadillas</td>
+                  <td>$2.50</td>
+                  <td>Quesadillas</td>
+                  <td>$2.50</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr class="line closed">
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+            <td>
+              <span class="button">
+                <i class="fa-solid fa-plus"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <table class="sub-table">
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                </tr>
+                <tr>
+                  <td>Apples</td>
+                  <td>$1.50</td>
+                  <td>Apples</td>
+                  <td>$1.50</td>
+                  <td>Apples</td>
+                  <td>$1.50</td>
+                </tr>
+                <tr>
+                  <td>Oranges</td>
+                  <td>$2.00</td>
+                  <td>Apples</td>
+                  <td>$1.50</td>
+                  <td>Apples</td>
+                  <td>$1.50</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr class="line closed">
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+            <td>
+              <span class="button">
+                <i class="fa-solid fa-plus"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <table>
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                </tr>
+                <tr>
+                  <td>Tacos</td>
+                  <td>$3.00</td>
+                  <td>Tacos</td>
+                  <td>$3.00</td>
+                  <td>Tacos</td>
+                  <td>$3.00</td>
+                  <td>Tacos</td>
+                  <td>$3.00</td>
+                </tr>
+                <tr>
+                  <td>Quesadillas</td>
+                  <td>$2.50</td>
+                  <td>Quesadillas</td>
+                  <td>$2.50</td>
+                  <td>Quesadillas</td>
+                  <td>$2.50</td>
+                  <td>Quesadillas</td>
+                  <td>$2.50</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr class="line closed">
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+            <td>
+              <span class="button">
+                <i class="fa-solid fa-plus"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <table class="sub-table">
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                </tr>
+                <tr>
+                  <td>Apples</td>
+                  <td>$1.50</td>
+                  <td>Apples</td>
+                  <td>$1.50</td>
+                  <td>Apples</td>
+                  <td>$1.50</td>
+                </tr>
+                <tr>
+                  <td>Oranges</td>
+                  <td>$2.00</td>
+                  <td>Apples</td>
+                  <td>$1.50</td>
+                  <td>Apples</td>
+                  <td>$1.50</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr class="line closed">
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+            <td>
+              <span class="button">
+                <i class="fa-solid fa-plus"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <table>
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                </tr>
+                <tr>
+                  <td>Tacos</td>
+                  <td>$3.00</td>
+                  <td>Tacos</td>
+                  <td>$3.00</td>
+                  <td>Tacos</td>
+                  <td>$3.00</td>
+                  <td>Tacos</td>
+                  <td>$3.00</td>
+                </tr>
+                <tr>
+                  <td>Quesadillas</td>
+                  <td>$2.50</td>
+                  <td>Quesadillas</td>
+                  <td>$2.50</td>
+                  <td>Quesadillas</td>
+                  <td>$2.50</td>
+                  <td>Quesadillas</td>
+                  <td>$2.50</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr class="line closed">
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+            <td>
+              <span class="button">
+                <i class="fa-solid fa-plus"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <table class="sub-table">
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                </tr>
+                <tr>
+                  <td>Apples</td>
+                  <td>$1.50</td>
+                  <td>Apples</td>
+                  <td>$1.50</td>
+                  <td>Apples</td>
+                  <td>$1.50</td>
+                </tr>
+                <tr>
+                  <td>Oranges</td>
+                  <td>$2.00</td>
+                  <td>Apples</td>
+                  <td>$1.50</td>
+                  <td>Apples</td>
+                  <td>$1.50</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr class="line closed">
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+            <td>
+              <span class="button">
+                <i class="fa-solid fa-plus"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <table>
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                </tr>
+                <tr>
+                  <td>Tacos</td>
+                  <td>$3.00</td>
+                  <td>Tacos</td>
+                  <td>$3.00</td>
+                  <td>Tacos</td>
+                  <td>$3.00</td>
+                  <td>Tacos</td>
+                  <td>$3.00</td>
+                </tr>
+                <tr>
+                  <td>Quesadillas</td>
+                  <td>$2.50</td>
+                  <td>Quesadillas</td>
+                  <td>$2.50</td>
+                  <td>Quesadillas</td>
+                  <td>$2.50</td>
+                  <td>Quesadillas</td>
+                  <td>$2.50</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+  <script type="text/javascript">
+    document.querySelectorAll("span").forEach(function (span) {
+      span.addEventListener("click", function (e) {
+        const parent = span.closest("tr");
+        const icon = span.querySelector("i");
+        const isOpen = parent.classList.contains("open");
+        if (isOpen) {
+          parent.classList.remove("open");
+          parent.classList.add("closed");
+          icon.classList.remove("fa-minus");
+          icon.classList.add("fa-plus");
+        } else {
+          parent.classList.add("open");
+          parent.classList.remove("closed");
+          icon.classList.add("fa-minus");
+          icon.classList.remove("fa-plus");
+        }
+        console.log(parent);
+      });
+    });
+  </script>
+</html>
